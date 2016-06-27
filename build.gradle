@@ -10,8 +10,8 @@ ext  {
             versionName : '1.0.0',
             applicationId : 'com.theaty.xicheng'
     ]
-    library = [
-            supportLibrary : '23.4.0',
+    libraries = [
+            supportVersion : '23.4.0',
             picasso : '2.5.2',
             gson:'2.6.2',
             butterKnife : '7.0.1'
