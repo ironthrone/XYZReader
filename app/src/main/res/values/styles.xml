@@ -17,6 +17,7 @@
 
 <resources>
 
+
     <style name="Theme.App" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
@@ -24,6 +25,7 @@
     </style>
 
     <style name="Theme.App.Detail">
+
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
