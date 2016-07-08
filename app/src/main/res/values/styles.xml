@@ -26,7 +26,6 @@
 
     <style name="Theme.App.Detail">
 
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>
