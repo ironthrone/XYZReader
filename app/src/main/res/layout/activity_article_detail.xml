@@ -1,4 +1,4 @@
-<android.support.design.widget.CoordinatorLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,24 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <android.support.design.widget.AppBarLayout
-        app:elevation="0dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="116dp">
-
+        android:layout_height="match_parent" />
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"/>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_marginTop="116dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
@@ -37,4 +28,4 @@
         android:src="@drawable/ic_share"
         app:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share" />
-</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
