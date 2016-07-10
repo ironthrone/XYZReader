@@ -42,6 +42,7 @@ public class ArticleDetailFragment extends Fragment implements
     private ColorDrawable mStatusBarColorDrawable;
 
     private ImageView mPhotoView;
+    private String mTitle;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -101,6 +102,9 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    public String getTitle(){
+        return mTitle;
+    }
     private void bindViews() {
         if (mRootView == null) {
             return;
@@ -116,7 +120,8 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            mTitle = mCursor.getString(ArticleLoader.Query.TITLE);
+            titleView.setText(mTitle);
             bylineView.setText(Html.fromHtml(
                     DateUtils.getRelativeTimeSpanString(
                             mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),

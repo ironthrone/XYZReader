@@ -96,7 +96,7 @@ public class ArticleDetailActivity extends ActionBarActivity
             public void onClick(View v) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(ArticleDetailActivity.this)
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText(mPagerAdapter.currentFragment.getTitle())
                         .getIntent(), getString(R.string.action_share)));
             }
         });
@@ -108,8 +108,6 @@ public class ArticleDetailActivity extends ActionBarActivity
             }
         }
     }
-
-
 
 
     @Override
@@ -148,7 +146,7 @@ public class ArticleDetailActivity extends ActionBarActivity
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
-        private ArticleDetailFragment fragment;
+        private ArticleDetailFragment currentFragment;
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -157,12 +155,12 @@ public class ArticleDetailActivity extends ActionBarActivity
         @Override
         public void setPrimaryItem(ViewGroup container, int position, Object object) {
             super.setPrimaryItem(container, position, object);
-            fragment = (ArticleDetailFragment) object;
+            currentFragment = (ArticleDetailFragment) object;
 
         }
 
         public ArticleDetailFragment getCurrentItem(){
-            return  fragment;
+            return currentFragment;
         }
 
         @Override
