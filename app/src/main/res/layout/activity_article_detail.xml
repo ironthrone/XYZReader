@@ -26,6 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_share"
-        app:elevation="@dimen/fab_elevation"
+        app:elevation="@dimen/fab_resting_elevation"
         android:contentDescription="@string/action_share" />
 </FrameLayout>
