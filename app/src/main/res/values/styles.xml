@@ -24,7 +24,7 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="Theme.App.Detail">
+    <style name="Theme.App.Detail" parent="Theme.App">
 
     </style>
 

@@ -25,6 +25,7 @@
         </activity>
 
         <activity
+            android:theme="@style/Theme.App.Detail"
             android:name=".ui.ArticleDetailActivity"
             android:parentActivityName=".ui.ArticleListActivity">
             <intent-filter>
