@@ -111,11 +111,8 @@ public class ArticleDetailFragment extends Fragment implements
                 getActivityCast().finish();
             }
         });
-        getActivityCast().setSupportActionBar(mToolbar);
-        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getActivityCast().getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
+        mToolbar.setNavigationIcon(R.drawable.ic_up_24dp);
         //setup FAB
         mFAB = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
         mFAB.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +127,11 @@ public class ArticleDetailFragment extends Fragment implements
 
 
         return mRootView;
+    }
+
+
+    public Toolbar getToolbar(){
+        return mToolbar;
     }
 
     private void bindViews() {
@@ -179,6 +181,8 @@ public class ArticleDetailFragment extends Fragment implements
             bodyView.setText("N/A");
         }
     }
+
+
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {

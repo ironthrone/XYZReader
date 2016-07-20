@@ -3,6 +3,7 @@ package com.example.xyzreader.ui;
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -16,6 +17,7 @@ public class HideBehavior extends CoordinatorLayout.Behavior {
     private final DisplayMetrics displayMetrics;
     //初始的y值，在第一次嵌套滑动之前
     private float initY;
+    private boolean show;
 
 
     public HideBehavior(Context context, AttributeSet attrs) {
@@ -45,16 +47,48 @@ public class HideBehavior extends CoordinatorLayout.Behavior {
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, View child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
         float newY = child.getY() + dyConsumed/2;
-        if(dyConsumed >0){
+        if(dyConsumed >0 && show){
 
             ViewCompat.animate(child)
                     .setDuration(300)
                     .translationY(displayMetrics.heightPixels)
+                    .setListener(new ViewPropertyAnimatorListener() {
+                        @Override
+                        public void onAnimationStart(View view) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(View view) {
+                            show = false;
+                        }
+
+                        @Override
+                        public void onAnimationCancel(View view) {
+
+                        }
+                    })
             .start();
-        }else {
+        }else if(dyConsumed < 0 && !show){
             ViewCompat.animate(child)
                     .setDuration(300)
                     .translationY(0)
+                    .setListener(new ViewPropertyAnimatorListener() {
+                        @Override
+                        public void onAnimationStart(View view) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(View view) {
+                            show = true;
+                        }
+
+                        @Override
+                        public void onAnimationCancel(View view) {
+
+                        }
+                    })
                     .start();
         }
     }
