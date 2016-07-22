@@ -101,6 +101,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.image);
 
+
         mStatusBarColorDrawable = new ColorDrawable(0);
 
         //setup toolbar
@@ -165,7 +166,6 @@ public class ArticleDetailFragment extends Fragment implements
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-
                             }
                         }
 
@@ -181,7 +181,6 @@ public class ArticleDetailFragment extends Fragment implements
             bodyView.setText("N/A");
         }
     }
-
 
 
     @Override
